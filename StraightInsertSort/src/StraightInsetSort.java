@@ -2,14 +2,27 @@
  * Created by Happy on 2014/8/13.
  */
 public class StraightInsetSort {
+    /**
+     * To print the array
+     *
+     * @param a the array which is be printed
+     * @param n the element's number in the array
+     * @param i the index
+     */
     public static void print(int a[], int n, int i) {
-        System.out.print(":");
-        for (int j = 0; j < 8; j++) {
-            System.out.print(a[j]);
+        System.out.print(i + ":");
+        for (int j = 0; j < n; j++) {
+            System.out.print(a[j] + " ");
         }
         System.out.println();
     }
 
+    /**
+     * Sorting array in a straight sort way
+     *
+     * @param a the array which is be sorted
+     * @param n the element's number in the array
+     */
     public static void InsertSort(int a[], int n) {
         for (int i = 1; i < n; i++) {
             if (a[i] < a[i - 1]) {
@@ -26,9 +39,13 @@ public class StraightInsetSort {
         }
     }
 
+    /**
+     * the main function
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         int a[] = {3, 1, 5, 7, 2, 4, 9, 6};
         InsertSort(a, 8);
-        print(a, 8, 8);
     }
 }
