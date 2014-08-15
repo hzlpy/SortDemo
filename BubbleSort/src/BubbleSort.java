@@ -38,6 +38,27 @@ public class BubbleSort {
     }
 
     /**
+     * Another bubble sort method with improvement.
+     * @param a
+     * @param n
+     */
+    public static void improveBubbleSort(int a[], int n) {
+        boolean isChange = true;
+        for (int i = 0; i < n && isChange; i++) {
+            isChange = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j + 1];
+                    a[j + 1] = a[j];
+                    a[j] = temp;
+                    isChange = true;
+                }
+            }
+            print(a, n, i);
+        }
+    }
+
+    /**
      * the main function
      *
      * @param args
