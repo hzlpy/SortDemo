@@ -42,7 +42,7 @@ public class BubbleSort {
      * @param a
      * @param n
      */
-    public static void improveBubbleSort(int a[], int n) {
+    public static void bubbleSort1(int a[], int n) {
         boolean isChange = true;
         for (int i = 0; i < n && isChange; i++) {
             isChange = false;
@@ -58,6 +58,45 @@ public class BubbleSort {
         }
     }
 
+    public static void bubbleSort2(int a[], int n) {
+        int i = n - 1;
+        while (i > 0) {
+            int pos = 0;
+            for (int j = 0; j < i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                    pos = j;
+                }
+            }
+            i = pos;
+            print(a, 8, i);
+        }
+    }
+
+    /**
+     * 在将最大的沉到最后的过程中，是否可以比较而直到最底部才进行交换
+     *
+     * @param a
+     * @param n
+     */
+    public static void bubbleSort3(int a[], int n) {
+//        int i = n-1;
+//        int max = a[0];
+//        while (i>0){
+//            int pos = 0;
+//            for (int j = 0; j < i; j++) {
+//                if (max < a[j+1]){
+//                    max = a[j+1];
+//                    pos = j;
+//                }
+//            }
+//            a[i] = max;
+//            i = pos;
+//            print(a,8,i);
+//        }
+    }
     /**
      * the main function
      *
@@ -65,6 +104,7 @@ public class BubbleSort {
      */
     public static void main(String args[]) {
         int a[] = {3, 1, 5, 7, 2, 4, 9, 6};
-        bubbleSort(a, 8);
+        //bubbleSort(a, 8);
+        bubbleSort3(a, 8);
     }
 }
